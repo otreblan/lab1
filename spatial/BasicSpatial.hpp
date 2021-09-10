@@ -18,12 +18,15 @@ class BasicSpatial : public SpatialBase<Point> {
 
  public:
   BasicSpatial() {};
+
+  // O(1)
   void insert(const Point& new_point) override
   {
     v.push_back(new_point);
   }
 
   // El punto de referencia no necesariamente es parte del dataset
+  // O(n)
   Point nearest_neighbor(const Point& reference) override
   {
     Point nearest = reference;
